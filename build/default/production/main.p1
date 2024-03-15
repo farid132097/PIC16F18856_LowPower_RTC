@@ -1,4 +1,24 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"23916 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\proc\pic16f18856.h
+[v _FVRCON `Vuc ~T0 @X0 0 e@2316 ]
+"2338
+[v _ADREF `Vuc ~T0 @X0 0 e@154 ]
+"2228
+[v _ADCLK `Vuc ~T0 @X0 0 e@152 ]
+"2501
+[v _ADACQ `Vuc ~T0 @X0 0 e@157 ]
+"2431
+[v _ADPRE `Vuc ~T0 @X0 0 e@156 ]
+"2379
+[v _ADCAP `Vuc ~T0 @X0 0 e@155 ]
+"1860
+[v _ADCON0 `Vuc ~T0 @X0 0 e@147 ]
+"1971
+[v _ADCON1 `Vuc ~T0 @X0 0 e@148 ]
+"2571
+[v _ADPCH `Vuc ~T0 @X0 0 e@158 ]
+"1532
+[v _ADRES `Vus ~T0 @X0 0 e@140 ]
 [p mainexit ]
 "40 uart.h
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
@@ -14,8 +34,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
 "22716
 [v _VREGCON `Vuc ~T0 @X0 0 e@2066 ]
-"23916
-[v _FVRCON `Vuc ~T0 @X0 0 e@2316 ]
+"654
+[v _TRISB `Vuc ~T0 @X0 0 e@18 ]
+"33311
+[v _ANSELB `Vuc ~T0 @X0 0 e@3907 ]
+"840
+[v _LATB `Vuc ~T0 @X0 0 e@23 ]
 "27 uart.h
 [v _UART_Transmit_Number_NL `(v ~T0 @X0 0 ef1`l ]
 "8 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16F1xxxx_DFP/1.7.146/xc8\pic\include\builtins.h
@@ -13211,105 +13235,321 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 [; ;main.c: 17: volatile uint16_t val=0;
-[v $root$_main `(v ~T0 @X0 0 e ]
 "19
-[v _main `(v ~T0 @X0 1 ef ]
+[v _ADC_Enable_FVR `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 19: void main(void) {
-[e :U _main ]
+[; ;main.c: 19: void ADC_Enable_FVR(void){
+[e :U _ADC_Enable_FVR ]
 [f ]
-[; ;main.c: 21: UART_Init(115200);
+[; ;main.c: 20: FVRCON=(1<<7)|(0x02<<0);
+"20
+[e = _FVRCON -> | << -> 1 `i -> 7 `i << -> 2 `i -> 0 `i `uc ]
+[; ;main.c: 21: while((FVRCON & (1<<6))==0);
 "21
-[e ( _UART_Init (1 -> -> 115200 `l `ul ]
-[; ;main.c: 23: T0CON1 = (4<<5);
-"23
-[e = _T0CON1 -> << -> 4 `i -> 5 `i `uc ]
-[; ;main.c: 24: T0CON1|= (1<<4);
-"24
-[e =| _T0CON1 -> << -> 1 `i -> 4 `i `uc ]
-[; ;main.c: 25: T0CON1|= (7<<0);
-"25
-[e =| _T0CON1 -> << -> 7 `i -> 0 `i `uc ]
-[; ;main.c: 26: T0CON0 = (1<<7);
-"26
-[e = _T0CON0 -> << -> 1 `i -> 7 `i `uc ]
-[; ;main.c: 27: PIR0 &=~(1<<5);
-"27
-[e =& _PIR0 -> ~ << -> 1 `i -> 5 `i `uc ]
-[; ;main.c: 28: PIE0 |= (1<<5);
-"28
-[e =| _PIE0 -> << -> 1 `i -> 5 `i `uc ]
-[; ;main.c: 29: INTCON|= (1<<6);
-"29
-[e =| _INTCON -> << -> 1 `i -> 6 `i `uc ]
-[; ;main.c: 30: INTCON|= (1<<7);
-"30
-[e =| _INTCON -> << -> 1 `i -> 7 `i `uc ]
-[; ;main.c: 31: VREGCON|=(1<<1);
-"31
-[e =| _VREGCON -> << -> 1 `i -> 1 `i `uc ]
-[; ;main.c: 32: FVRCON = 0;
-"32
-[e = _FVRCON -> -> 0 `i `uc ]
-[; ;main.c: 34: while(1){
-"34
+[e $U 1559  ]
 [e :U 1560 ]
-{
-[; ;main.c: 36: UART_Transmit_Number_NL(val);
-"36
-[e ( _UART_Transmit_Number_NL (1 -> _val `l ]
-[; ;main.c: 37: __nop();
-"37
-[e ( ___nop ..  ]
-[; ;main.c: 38: __nop();
-"38
-[e ( ___nop ..  ]
-[; ;main.c: 39: __nop();
-"39
-[e ( ___nop ..  ]
-[; ;main.c: 40: asm("sleep");
-"40
-[; <" sleep ;# ">
-"41
-}
 [e :U 1559 ]
-"34
-[e $U 1560  ]
+[e $ == & -> _FVRCON `i << -> 1 `i -> 6 `i -> 0 `i 1560  ]
 [e :U 1561 ]
-[; ;main.c: 41: }
-[; ;main.c: 43: return;
-"43
-[e $UE 1558  ]
-[; ;main.c: 44: }
-"44
+[; ;main.c: 22: }
+"22
 [e :UE 1558 ]
 }
-[v $root$_ISRs `(v ~T0 @X0 0 e ]
-[v F11741 `(v ~T0 @X0 1 tf ]
-"46
-[v _ISRs `IF11741 ~T0 @X0 1 e ]
+"24
+[v _ADC_Disable_FVR `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 46: void interrupt ISRs(void){
+[; ;main.c: 24: void ADC_Disable_FVR(void){
+[e :U _ADC_Disable_FVR ]
+[f ]
+[; ;main.c: 25: FVRCON=0;
+"25
+[e = _FVRCON -> -> 0 `i `uc ]
+[; ;main.c: 26: }
+"26
+[e :UE 1562 ]
+}
+"28
+[v _ADC_Init `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 28: void ADC_Init(void){
+[e :U _ADC_Init ]
+[f ]
+[; ;main.c: 29: if(ADREF!=0){
+"29
+[e $ ! != -> _ADREF `i -> 0 `i 1564  ]
+{
+[; ;main.c: 30: ADREF=0;
+"30
+[e = _ADREF -> -> 0 `i `uc ]
+"31
+}
+[e :U 1564 ]
+[; ;main.c: 31: }
+[; ;main.c: 32: if(ADCLK!=63){
+"32
+[e $ ! != -> _ADCLK `i -> 63 `i 1565  ]
+{
+[; ;main.c: 33: ADCLK=63;
+"33
+[e = _ADCLK -> -> 63 `i `uc ]
+"34
+}
+[e :U 1565 ]
+[; ;main.c: 34: }
+[; ;main.c: 35: if(ADACQ!=4){
+"35
+[e $ ! != -> _ADACQ `i -> 4 `i 1566  ]
+{
+[; ;main.c: 36: ADACQ=4;
+"36
+[e = _ADACQ -> -> 4 `i `uc ]
+"37
+}
+[e :U 1566 ]
+[; ;main.c: 37: }
+[; ;main.c: 38: if(ADPRE!=0){
+"38
+[e $ ! != -> _ADPRE `i -> 0 `i 1567  ]
+{
+[; ;main.c: 39: ADPRE=0;
+"39
+[e = _ADPRE -> -> 0 `i `uc ]
+"40
+}
+[e :U 1567 ]
+[; ;main.c: 40: }
+[; ;main.c: 41: if(ADCAP!=1){
+"41
+[e $ ! != -> _ADCAP `i -> 1 `i 1568  ]
+{
+[; ;main.c: 42: ADCAP=1;
+"42
+[e = _ADCAP -> -> 1 `i `uc ]
+"43
+}
+[e :U 1568 ]
+[; ;main.c: 43: }
+[; ;main.c: 44: if(ADCON0!=0x84){
+"44
+[e $ ! != -> _ADCON0 `i -> 132 `i 1569  ]
+{
+[; ;main.c: 45: ADCON0=0x84;
+"45
+[e = _ADCON0 -> -> 132 `i `uc ]
+"46
+}
+[e :U 1569 ]
+[; ;main.c: 46: }
+[; ;main.c: 47: if(ADCON1!=0){
+"47
+[e $ ! != -> _ADCON1 `i -> 0 `i 1570  ]
+{
+[; ;main.c: 48: ADCON1=0;
+"48
+[e = _ADCON1 -> -> 0 `i `uc ]
+"49
+}
+[e :U 1570 ]
+[; ;main.c: 49: }
+[; ;main.c: 50: }
+"50
+[e :UE 1563 ]
+}
+"52
+[v _ADC_Disable `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 52: void ADC_Disable(void){
+[e :U _ADC_Disable ]
+[f ]
+[; ;main.c: 53: ADCON0=0;
+"53
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;main.c: 54: }
+"54
+[e :UE 1571 ]
+}
+"56
+[v _ADC_Read `(ui ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 56: uint16_t ADC_Read(uint8_t channel){
+[e :U _ADC_Read ]
+[v _channel `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 57: ADPCH=channel;
+"57
+[e = _ADPCH _channel ]
+[; ;main.c: 58: ADCON0|=(1<<0);
+"58
+[e =| _ADCON0 -> << -> 1 `i -> 0 `i `uc ]
+[; ;main.c: 59: while(ADCON0 & (1<<0));
+"59
+[e $U 1573  ]
+[e :U 1574 ]
+[e :U 1573 ]
+[e $ != & -> _ADCON0 `i << -> 1 `i -> 0 `i -> 0 `i 1574  ]
+[e :U 1575 ]
+[; ;main.c: 60: return ADRES;
+"60
+[e ) -> _ADRES `ui ]
+[e $UE 1572  ]
+[; ;main.c: 61: }
+"61
+[e :UE 1572 ]
+}
+"63
+[v _ADC_Read_VDD `(ui ~T0 @X0 1 ef ]
+{
+[; ;main.c: 63: uint16_t ADC_Read_VDD(void){
+[e :U _ADC_Read_VDD ]
+[f ]
+[; ;main.c: 64: ADC_Enable_FVR();
+"64
+[e ( _ADC_Enable_FVR ..  ]
+[; ;main.c: 65: ADC_Init();
+"65
+[e ( _ADC_Init ..  ]
+[; ;main.c: 66: ADC_Read(0x3F);
+"66
+[e ( _ADC_Read (1 -> -> 63 `i `uc ]
+"67
+[v _temp `ul ~T0 @X0 1 a ]
+[; ;main.c: 67: uint32_t temp=ADC_Read(0x3F);
+[e = _temp -> ( _ADC_Read (1 -> -> 63 `i `uc `ul ]
+[; ;main.c: 68: ADC_Disable();
+"68
+[e ( _ADC_Disable ..  ]
+[; ;main.c: 69: ADC_Disable_FVR();
+"69
+[e ( _ADC_Disable_FVR ..  ]
+"70
+[v _mul_const `ul ~T0 @X0 1 a ]
+[; ;main.c: 70: uint32_t mul_const=2097152;
+[e = _mul_const -> -> 2097152 `l `ul ]
+[; ;main.c: 71: mul_const/=temp;
+"71
+[e =/ _mul_const _temp ]
+[; ;main.c: 72: return (uint16_t)mul_const;
+"72
+[e ) -> _mul_const `ui ]
+[e $UE 1576  ]
+[; ;main.c: 73: }
+"73
+[e :UE 1576 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"75
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 75: void main(void) {
+[e :U _main ]
+[f ]
+[; ;main.c: 77: UART_Init(115200);
+"77
+[e ( _UART_Init (1 -> -> 115200 `l `ul ]
+[; ;main.c: 78: T0CON1 = (4<<5);
+"78
+[e = _T0CON1 -> << -> 4 `i -> 5 `i `uc ]
+[; ;main.c: 79: T0CON1|= (1<<4);
+"79
+[e =| _T0CON1 -> << -> 1 `i -> 4 `i `uc ]
+[; ;main.c: 80: T0CON1|= (7<<0);
+"80
+[e =| _T0CON1 -> << -> 7 `i -> 0 `i `uc ]
+[; ;main.c: 81: T0CON0 = (1<<7);
+"81
+[e = _T0CON0 -> << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 82: PIR0 &=~(1<<5);
+"82
+[e =& _PIR0 -> ~ << -> 1 `i -> 5 `i `uc ]
+[; ;main.c: 83: PIE0 |= (1<<5);
+"83
+[e =| _PIE0 -> << -> 1 `i -> 5 `i `uc ]
+[; ;main.c: 84: INTCON|= (1<<6);
+"84
+[e =| _INTCON -> << -> 1 `i -> 6 `i `uc ]
+[; ;main.c: 85: INTCON|= (1<<7);
+"85
+[e =| _INTCON -> << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 86: VREGCON|=(1<<1);
+"86
+[e =| _VREGCON -> << -> 1 `i -> 1 `i `uc ]
+[; ;main.c: 87: FVRCON = 0;
+"87
+[e = _FVRCON -> -> 0 `i `uc ]
+[; ;main.c: 89: TRISB&=~(1<<7);
+"89
+[e =& _TRISB -> ~ << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 90: ANSELB&=~(1<<7);
+"90
+[e =& _ANSELB -> ~ << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 91: LATB&=~(1<<7);
+"91
+[e =& _LATB -> ~ << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 93: while(1){
+"93
+[e :U 1579 ]
+{
+[; ;main.c: 95: LATB|=(1<<7);
+"95
+[e =| _LATB -> << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 96: UART_Transmit_Number_NL(ADC_Read_VDD());
+"96
+[e ( _UART_Transmit_Number_NL (1 -> ( _ADC_Read_VDD ..  `l ]
+[; ;main.c: 97: __nop();
+"97
+[e ( ___nop ..  ]
+[; ;main.c: 98: __nop();
+"98
+[e ( ___nop ..  ]
+[; ;main.c: 99: __nop();
+"99
+[e ( ___nop ..  ]
+[; ;main.c: 100: LATB&=~(1<<7);
+"100
+[e =& _LATB -> ~ << -> 1 `i -> 7 `i `uc ]
+[; ;main.c: 101: asm("sleep");
+"101
+[; <" sleep ;# ">
+"102
+}
+[e :U 1578 ]
+"93
+[e $U 1579  ]
+[e :U 1580 ]
+[; ;main.c: 102: }
+[; ;main.c: 104: return;
+"104
+[e $UE 1577  ]
+[; ;main.c: 105: }
+"105
+[e :UE 1577 ]
+}
+[v $root$_ISRs `(v ~T0 @X0 0 e ]
+[v F11756 `(v ~T0 @X0 1 tf ]
+"107
+[v _ISRs `IF11756 ~T0 @X0 1 e ]
+{
+[; ;main.c: 107: void interrupt ISRs(void){
 [e :U _ISRs ]
 [f ]
-[; ;main.c: 47: UART_ISR_Routine();
-"47
+[; ;main.c: 108: UART_ISR_Routine();
+"108
 [e ( _UART_ISR_Routine ..  ]
-[; ;main.c: 48: if(PIR0 & (1<<5)){
-"48
-[e $ ! != & -> _PIR0 `i << -> 1 `i -> 5 `i -> 0 `i 1563  ]
+[; ;main.c: 109: if(PIR0 & (1<<5)){
+"109
+[e $ ! != & -> _PIR0 `i << -> 1 `i -> 5 `i -> 0 `i 1582  ]
 {
-[; ;main.c: 49: PIR0 &=~(1<<5);
-"49
+[; ;main.c: 110: PIR0 &=~(1<<5);
+"110
 [e =& _PIR0 -> ~ << -> 1 `i -> 5 `i `uc ]
-[; ;main.c: 50: val++;
-"50
+[; ;main.c: 111: val++;
+"111
 [e ++ _val -> -> 1 `i `ui ]
-"51
+"112
 }
-[e :U 1563 ]
-[; ;main.c: 51: }
-[; ;main.c: 52: }
-"52
-[e :UE 1562 ]
+[e :U 1582 ]
+[; ;main.c: 112: }
+[; ;main.c: 113: }
+"113
+[e :UE 1581 ]
 }

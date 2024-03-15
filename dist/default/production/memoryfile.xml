@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\PIC16F18856_LowPower_RTC.X.production.hex">
+  <executable name="dist/default/production\PIC16F18856_LowPower_RTC.production.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>
-      <used>570</used>
-      <free>15814</free>
+      <used>751</used>
+      <free>15633</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>49</used>
-      <free>1999</free>
+      <used>52</used>
+      <free>1996</free>
     </memory>
   </executable>
 </project>

@@ -15,11 +15,23 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"19 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\main.c
+"19 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\main.c
+[v _ADC_Enable_FVR ADC_Enable_FVR `(v  1 e 1 0 ]
+"24
+[v _ADC_Disable_FVR ADC_Disable_FVR `(v  1 e 1 0 ]
+"28
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"52
+[v _ADC_Disable ADC_Disable `(v  1 e 1 0 ]
+"56
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+"63
+[v _ADC_Read_VDD ADC_Read_VDD `(ui  1 e 2 0 ]
+"75
 [v _main main `(v  1 e 1 0 ]
-"46
+"107
 [v _ISRs ISRs `II(v  1 e 1 0 ]
-"89 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\uart.c
+"89 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\uart.c
 [v _UART_Config_GPIO UART_Config_GPIO `(v  1 e 1 0 ]
 "93
 [v _UART_Config_Clock UART_Config_Clock `(v  1 e 1 0 ]
@@ -53,10 +65,30 @@
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 "654
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
+"840
+[v _LATB LATB `VEuc  1 e 1 @23 ]
 "1356
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @30 ]
 "1421
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @31 ]
+"1532
+[v _ADRES ADRES `VEus  1 e 2 @140 ]
+"1860
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @147 ]
+"1971
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @148 ]
+"2228
+[v _ADCLK ADCLK `VEuc  1 e 1 @152 ]
+"2338
+[v _ADREF ADREF `VEuc  1 e 1 @154 ]
+"2379
+[v _ADCAP ADCAP `VEuc  1 e 1 @155 ]
+"2431
+[v _ADPRE ADPRE `VEuc  1 e 1 @156 ]
+"2501
+[v _ADACQ ADACQ `VEuc  1 e 1 @157 ]
+"2571
+[v _ADPCH ADPCH `VEuc  1 e 1 @158 ]
 "3504
 [v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
 "3558
@@ -85,20 +117,20 @@
 [v _RB6PPS RB6PPS `VEuc  1 e 1 @3870 ]
 "33311
 [v _ANSELB ANSELB `VEuc  1 e 1 @3907 ]
-"17 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\main.c
+"17 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\main.c
 [v _val val `VEui  1 e 2 0 ]
-[s S59 uart_t 10 `VEuc 1 Error 1 0 `[8]uc 1 Digits 8 1 `uc 1 InputNumberDigits 1 9 ]
-"85 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\uart.c
-[v _UART UART `VES59  1 s 10 UART ]
-"19 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\main.c
+[s S86 uart_t 10 `VEuc 1 Error 1 0 `[8]uc 1 Digits 8 1 `uc 1 InputNumberDigits 1 9 ]
+"85 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\uart.c
+[v _UART UART `VES86  1 s 10 UART ]
+"75 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"44
+"105
 } 0
-"294 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\uart.c
+"294 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\uart.c
 [v _UART_Transmit_Number_NL UART_Transmit_Number_NL `(v  1 e 1 0 ]
 {
-[v UART_Transmit_Number_NL@num num `l  1 p 4 13 ]
+[v UART_Transmit_Number_NL@num num `l  1 p 4 15 ]
 "297
 } 0
 "288
@@ -135,7 +167,7 @@
 [v ___llmod@dividend dividend `ul  1 p 4 5 ]
 "25
 } 0
-"241 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\uart.c
+"241 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\uart.c
 [v _UART_Transmit_New_Line UART_Transmit_New_Line `(v  1 e 1 0 ]
 {
 "244
@@ -185,6 +217,15 @@
 [v UART_Config_BAUD_Rate@baud_rate baud_rate `ul  1 p 4 5 ]
 "103
 } 0
+"63 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\main.c
+[v _ADC_Read_VDD ADC_Read_VDD `(ui  1 e 2 0 ]
+{
+"70
+[v ADC_Read_VDD@mul_const mul_const `ul  1 a 4 11 ]
+"67
+[v ADC_Read_VDD@temp temp `ul  1 a 4 7 ]
+"73
+} 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
@@ -197,12 +238,40 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 5 ]
 "30
 } 0
-"46 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\main.c
+"56 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\main.c
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+{
+[v ADC_Read@channel channel `uc  1 a 1 wreg ]
+[v ADC_Read@channel channel `uc  1 a 1 wreg ]
+[v ADC_Read@channel channel `uc  1 a 1 3 ]
+"61
+} 0
+"28
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+{
+"50
+} 0
+"19
+[v _ADC_Enable_FVR ADC_Enable_FVR `(v  1 e 1 0 ]
+{
+"22
+} 0
+"24
+[v _ADC_Disable_FVR ADC_Disable_FVR `(v  1 e 1 0 ]
+{
+"26
+} 0
+"52
+[v _ADC_Disable ADC_Disable `(v  1 e 1 0 ]
+{
+"54
+} 0
+"107
 [v _ISRs ISRs `II(v  1 e 1 0 ]
 {
-"52
+"113
 } 0
-"455 E:\Embedded Projects\Running\MPLAB Projects\PIC16F18856_LowPower_RTC.X\uart.c
+"455 D:\Projects\Embedded Projects\Personal\MPLAB\PIC16F18856_LowPower_RTC\uart.c
 [v _UART_ISR_Routine UART_ISR_Routine `(v  1 e 1 0 ]
 {
 "461

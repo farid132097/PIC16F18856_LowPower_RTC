@@ -20188,10 +20188,65 @@ void UART_ISR_Routine(void);
 # 17 "main.c"
 volatile uint16_t val=0;
 
+void ADC_Enable_FVR(void){
+FVRCON=(1<<7)|(0x02<<0);
+while((FVRCON & (1<<6))==0);
+}
+
+void ADC_Disable_FVR(void){
+FVRCON=0;
+}
+
+void ADC_Init(void){
+if(ADREF!=0){
+ADREF=0;
+}
+if(ADCLK!=63){
+ADCLK=63;
+}
+if(ADACQ!=4){
+ADACQ=4;
+}
+if(ADPRE!=0){
+ADPRE=0;
+}
+if(ADCAP!=1){
+ADCAP=1;
+}
+if(ADCON0!=0x84){
+ADCON0=0x84;
+}
+if(ADCON1!=0){
+ADCON1=0;
+}
+}
+
+void ADC_Disable(void){
+ADCON0=0;
+}
+
+uint16_t ADC_Read(uint8_t channel){
+ADPCH=channel;
+ADCON0|=(1<<0);
+while(ADCON0 & (1<<0));
+return ADRES;
+}
+
+uint16_t ADC_Read_VDD(void){
+ADC_Enable_FVR();
+ADC_Init();
+ADC_Read(0x3F);
+uint32_t temp=ADC_Read(0x3F);
+ADC_Disable();
+ADC_Disable_FVR();
+uint32_t mul_const=2097152;
+mul_const/=temp;
+return (uint16_t)mul_const;
+}
+
 void main(void) {
 
 UART_Init(115200);
-
 T0CON1 = (4<<5);
 T0CON1|= (1<<4);
 T0CON1|= (7<<0);
@@ -20203,12 +20258,18 @@ INTCON|= (1<<7);
 VREGCON|=(1<<1);
 FVRCON = 0;
 
+TRISB&=~(1<<7);
+ANSELB&=~(1<<7);
+LATB&=~(1<<7);
+
 while(1){
 
-UART_Transmit_Number_NL(val);
+LATB|=(1<<7);
+UART_Transmit_Number_NL(ADC_Read_VDD());
 __nop();
 __nop();
 __nop();
+LATB&=~(1<<7);
 asm("sleep");
 }
 
